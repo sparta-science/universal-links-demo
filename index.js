@@ -1,9 +1,24 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const fs = require('fs');
 
-var appleAppSiteAssociationContents = fs.readFileSync(path.resolve(__dirname, 'assets/apple-app-site-association'), 'utf8');
+var appleAppSiteAssociationContents = "{' +
+  '   \'applinks\':{' +
+  '      \'apps\': [],' +
+  '      \'details\':[' +
+  '         {' +
+  '            \'appIDs\': [ \'GB9B5L6A6K.com.spartascience.PrototypeMariposa\', \'RDXCX7EKCD.com.gameborn.mariposa\' ],' +
+  '            \'components\': [' +
+  '               {' +
+  '                  \'/\': \'/scan/*\',' +
+  '                  \'comment\': \'Matches any URL whose path starts with /scan/\'' +
+  '               }' +
+  '\t     ]' +
+  '         }' +
+  '      ]' +
+  '   }' +
+  '}' +
+  '"
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
