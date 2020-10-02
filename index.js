@@ -28,6 +28,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/scan/index.html', (req, res) => res.render('pages/scan/index'))
   .get(['/.well-known/apple-app-site-association'], function (req, res) {
     res.set('Content-Type', 'application/json');
     res.send(appleAppSiteAssociationContents);
