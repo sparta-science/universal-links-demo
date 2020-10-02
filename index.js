@@ -7,7 +7,7 @@ var appleAppSiteAssociationContents = "{\n" +
   "      \"apps\": [],\n" +
   "      \"details\":[\n" +
   "         {\n" +
-  "            \"appIDs\": [ \"GB9B5L6A6K.com.spartascience.PrototypeMariposa\", \"RDXCX7EKCD.com.gameborn.mariposa\" ],\n" +
+  "            \"appIDs\": [ \"GB9B5L6A6K.com.spartascience.UniversalLinkDemo\", \"RDXCX7EKCD.com.gameborn.mariposa\" ],\n" +
   "            \"components\": [\n" +
   "               {\n" +
   "                  \"/\": \"/scan/*\",\n" +
