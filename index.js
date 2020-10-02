@@ -7,4 +7,8 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get(['/.well-known/apple-app-site-association'], function (req, res) {
+    res.set('Content-Type', 'application/json');
+    res.send("{'test': '1'}");
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
