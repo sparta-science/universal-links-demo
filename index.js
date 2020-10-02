@@ -3,7 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const fs = require('fs');
 
-var appleAppSiteAssociationContents = fs.readFileSync(path.resolve(__dirname, '.well-known/apple-app-site-association'), 'utf8');
+var appleAppSiteAssociationContents = fs.readFileSync(path.resolve(__dirname, 'assets/apple-app-site-association'), 'utf8');
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
