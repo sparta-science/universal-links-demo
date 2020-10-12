@@ -33,4 +33,7 @@ express()
     res.set('Content-Type', 'application/json');
     res.send(appleAppSiteAssociationContents);
   })
+  .post('/upload', function (req, res) {
+    res.send('SUCCESS')
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
