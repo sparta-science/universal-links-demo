@@ -34,6 +34,7 @@ express()
     res.send(appleAppSiteAssociationContents);
   })
   .post('/upload', function (req, res) {
+    console.log(req);
     lastScans = req.body
     res.send('SUCCESS')
   })
