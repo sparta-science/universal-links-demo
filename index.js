@@ -38,10 +38,11 @@ express()
   })
   .post('/upload', function (req, res) {
     lastScans = req.body;
-    res.send('SUCCESS');
+    res.send(req.body);
+    //res.send('SUCCESS');
   })
   .get(['/scans'], function (req, res) {
-    // res.set('Content-Type', 'application/json');
+    //res.set('Content-Type', 'application/json');
     res.send(lastScans);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
