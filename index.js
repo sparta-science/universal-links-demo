@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require("body-parser");
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
@@ -24,6 +25,8 @@ var lastScans = "test info"
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
+  .use(bodyParser.urlencoded({ extended: false }))
+  .use(bodyParser.json())
 
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
@@ -34,9 +37,9 @@ express()
     res.send(appleAppSiteAssociationContents);
   })
   .post('/upload', function (req, res) {
-    console.log(req);
-    lastScans = req.body
-    res.send('SUCCESS')
+    console.log("body = " + req.body);
+    lastScans = req.body;
+    res.send('SUCCESS');
   })
   .get(['/scans'], function (req, res) {
     res.send(lastScans);
