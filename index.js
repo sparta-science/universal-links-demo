@@ -20,7 +20,7 @@ var appleAppSiteAssociationContents = "{\n" +
   "}\n" +
   "\n"
 
-
+var lastScans = "test info"
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
@@ -34,6 +34,10 @@ express()
     res.send(appleAppSiteAssociationContents);
   })
   .post('/upload', function (req, res) {
+    lastScans = req.body
     res.send('SUCCESS')
+  })
+  .get(['/scans'], function (req, res) {
+    res.send(lastScans);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
