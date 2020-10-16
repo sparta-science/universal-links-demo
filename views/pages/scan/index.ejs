@@ -1,23 +1,23 @@
 
 <head>
   <h1 style="color:black;font-size:20px;">When system dialog prompts, click Open link.</h1>
-  <script type="text/javascript">
-  function startMyApp()
-  {
-    document.location = 'mariposa://scan?name=Joe%20Dishwasher&gender=f&sha=f542e3bc-870e-481d-8bd7-5df15a7b15ee';
-    setTimeout( function()
-    {
-        if( confirm( 'You do not seem to have Mariposa App installed, do you want to go download it now?'))
-        {
-          document.location = 'https://apps.apple.com/us/app/my-jump-2/id1148617550';
-        }
-    }, 300);
-   }
-  </script>
 </head>
 
-If you have Mariposa installed, <a href="mariposa://scan?name=Joe%20Dishwasher&gender=f&sha=f542e3bc-870e-481d-8bd7-5df15a7b15ee">launch it</a>. Otherwise, download from <a href="https://www.apple.com">AppStore<a/>.
+<body>
+  <script type="text/javascript">
+    function openMariposa() {
+      document.getElementById("l").src = "mariposa://scan?name=Joe%20Dishwasher&gender=f&sha=f542e3bc-870e-481d-8bd7-5df15a7b15ee";
+    }
 
-<p>
-<a href="#" onclick="startMyApp();">Open Mariposa app</a>
-</p>
+    window.onload = function() {
+      openMariposa();
+
+      setTimeout(function() {
+        window.location = "https://apps.apple.com/us/app/xcode/id497799835?mt=12";
+      }, 500);
+    };
+  </script>
+  <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
+
+  If you have Mariposa installed, <a href="#" onclick="openMariposa()">launch it</a>. Otherwise, download from <a href="https://apps.apple.com/us/app/xcode/id497799835?mt=12">AppStore<a/>.
+</body>
