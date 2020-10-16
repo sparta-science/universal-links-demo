@@ -6,14 +6,15 @@
 <body>
   <script type="text/javascript">
     function openMariposa() {
-      document.getElementById("l").src = "mariposa://scan?name=Joe%20Dishwasher&gender=f&sha=f542e3bc-870e-481d-8bd7-5df15a7b15ee";
+      let query = document.url.search
+      document.getElementById("hiddenFrame").src = "sparta-scan://scan" + query;
     }
 
     window.onload = function() {
       openMariposa();
     };
   </script>
-  <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
+  <iframe id="hiddenFrame" width="1" height="1" style="visibility:hidden"></iframe>
 
-  If you have Mariposa installed, <a href="#" onclick="openMariposa()">launch it</a>. Otherwise, download from <a href="https://apps.apple.com/us/app/xcode/id497799835?mt=12">AppStore<a/>.
+  If you have Sparta Scan installed, <a href="#" onclick="openMariposa()">launch it</a>. Otherwise, download from <a href="https://apps.apple.com/us/app/my-jump-2/id1148617550">AppStore<a/>.
 </body>
