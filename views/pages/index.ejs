@@ -2,17 +2,19 @@
 <html>
 
 <head>
-  <h1 style="color:black;font-size:42px;">Check Universal Links</h1>
+  <h1 style="color:black;font-size:42px;">Scan Freddy Mercury</h1>
 </head>
 
 <body>
 <br/>
 <br/>
- <a href="./scan/index.html?name=Bob%20Rockstar&gender=m&sha=f542e3bc-870e-481d-8bd7-5df15a7b15ee">Scan in same domain </a> - Opens "/scan/index.html" in sparta-universal-links.herokuapp.com
+
+<input type="button" onclick='location.href="https://sparta-universal-links-demo.herokuapp.com/scan/index.html?name=Freddy%20Mercury&gender=m&sha=some-scan-sha';" value="Scan Freddy" /> - Same Domain
 
 <br/>
 <br/>
-<a href="https://sparta-tuolumne.herokuapp.com/scan/index.html">Scan in different domain </a> - Opens "/scan/index.html" in sparta-tuolumne.herokuapp.com
+<input type="button" onclick='location.href="https://sparta-tuolumne.herokuapp.com/scan/index.html?name=Freddy%20Mercury&gender=m&sha=a-different-scan-sha';" value="Scan Freddy" /> - Different Domain
+
 </body>
 
 </html>
